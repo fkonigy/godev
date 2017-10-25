@@ -1,0 +1,2 @@
+Please hash this text using MD5.
+Thanks

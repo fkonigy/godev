@@ -1,0 +1,23 @@
+K1: "V1"
+K2: 123
+K3: 2.5
+K4: yes
+K5:
+  - "M1"
+  - "M2"
+  - "M3"
+  - "M4"
+  - "M5"
+K6:
+  - Name: "Name1"
+    Family: "Family1"
+    Age: 10
+  - Name: "Name2"
+    Family: "Family2"
+    Age: 8
+  - Name: "Name3"
+    Family: "Family3"
+    Age: 13
+  - Name: Name4
+    Family: "Family4"
+    Age: 44
