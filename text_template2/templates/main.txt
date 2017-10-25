@@ -1,0 +1,55 @@
+{{define "incme"}}
+	I can be used later.
+{{end}}
+
+{{ $a := 1 }}
+{{ $b := 1 }}
+{{ $c := 2 }}
+{{ $note := "Salam" }}
+{{ $note }}
+
+My name is {{.Name}}.
+{{/* a comment */}}
+	A comment; discarded. May contain newlines.
+	Comments do not nest and must start and end at the
+	delimiters, as shown here.
+
+	{{"this is a pipeline"}}
+		The default textual representation (the same as would be
+		printed by fmt.Print) of the value of the pipeline is copied
+		to the output.
+
+	{{if "pipeline"}} T1 {{end}}
+		If the value of the pipeline is empty, no output is generated;
+		otherwise, T1 is executed. The empty values are false, 0, any
+		nil pointer or interface value, and any array, slice, map, or
+		string of length zero.
+		Dot is unaffected.
+
+	{{if eq $a $b}} T1 {{end}}
+		If the value of the pipeline is empty, no output is generated;
+		otherwise, T1 is executed. The empty values are false, 0, any
+		nil pointer or interface value, and any array, slice, map, or
+		string of length zero.
+		Dot is unaffected.
+
+	{{if eq $a $c}} T1 {{else}} T0 {{end}}
+		If the value of the pipeline is empty, T0 is executed;
+		otherwise, T1 is executed. Dot is unaffected.
+
+	{{template "incme"}}
+		The template with the specified name is executed with nil data.
+
+	{{block "block1" eq $a $b}} T1 {{end}}
+		A block is shorthand for defining a template
+			{{define "name1"}} T1 {{end}}
+		and then executing it in place
+			{{template "name1" .}}
+		The typical use is to define a set of root templates that are
+		then customized by redefining the block templates within.
+
+
+	{{with eq $a $b}} T1 {{end}}
+		If the value of the pipeline is empty, no output is generated;
+		otherwise, dot is set to the value of the pipeline and T1 is
+		executed.
