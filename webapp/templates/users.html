@@ -1,0 +1,18 @@
+<h1>Users Page</h1>
+
+<a href="/users/new">New User</a>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+  {{range $key, $value := .}}
+  <tr>
+    <td>{{$value.Name}}</td>
+    <td>{{$value.Email}}</td>
+    <td><a href="/users/show/{{$value.Id}}">Show</a></td>
+  </tr>
+  {{end}}
+</table>
